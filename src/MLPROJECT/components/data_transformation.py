@@ -25,7 +25,7 @@ class DataTransformation:
 
             logging.info('Transforming train and test data')
             transformed_train_data = train_data[['age', 'studytime', 'G3']]
-            transformed_test_data = test_data[['age', 'studytime']]
+            transformed_test_data = test_data[['age', 'studytime', 'G3']]
 
             logging.info('Saving transformed train and test data')
             transformed_train_data_path = self.data_transformation_config.transformed_train_data_path
@@ -34,7 +34,7 @@ class DataTransformation:
             save_obj_file(transformed_test_data, transformed_test_data_path)
 
             logging.info('Data Transformation is complete')
-            return transformed_train_data_path, transformed_test_data_path
+            return transformed_train_data, transformed_test_data
         
         except Exception as e:
             logging.info('Custom Exception')

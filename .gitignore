@@ -6,6 +6,8 @@ __pycache__/
 # Files
 test_code.py
 notebook
+artifacts/transformed_train_data.pkl
+artifacts/transformed_test_data.pkl
 
 # C extensions
 *.so

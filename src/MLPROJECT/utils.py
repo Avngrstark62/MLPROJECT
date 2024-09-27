@@ -1,5 +1,6 @@
 import os
 import sys
+import pickle
 from src.MLPROJECT.logger import logging
 from src.MLPROJECT.exception import CustomException
 import pandas as pd
@@ -20,6 +21,18 @@ def read_sql_data():
         df = pd.read_sql(query, engine)
         return df
 
+    except Exception as e:
+        logging.info('Custom Exception')
+        raise CustomException(e, sys)
+    
+
+def save_obj_file(obj, file_path):
+    try:
+        dir_path = os.path.dirname(file_path)
+        os.makedirs(dir_path, exist_ok=True)
+        with open(file_path, 'wb') as file_obj:
+            pickle.dump(obj, file_obj)
+    
     except Exception as e:
         logging.info('Custom Exception')
         raise CustomException(e, sys)

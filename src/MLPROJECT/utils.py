@@ -16,7 +16,7 @@ def read_sql_data():
     try:
         engine = create_engine(DATABASE_URL)
         logging.info('Connected to Database')
-        query = "SELECT * FROM chapter_progress;"
+        query = "SELECT * FROM student_performance_data;"
         df = pd.read_sql(query, engine)
         return df
 

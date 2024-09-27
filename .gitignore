@@ -5,6 +5,7 @@ __pycache__/
 
 # Files
 test_code.py
+notebook
 
 # C extensions
 *.so

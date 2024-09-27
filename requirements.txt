@@ -1,3 +1,7 @@
 numpy
 pandas
 setuptools
+SQLAlchemy
+psycopg2
+python-dotenv
+scikit-learn
